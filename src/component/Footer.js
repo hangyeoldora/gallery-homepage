@@ -23,7 +23,7 @@ const Footer = () => {
                     <p>contact</p>
                 </div>
             </div>
-            <div className="ft-wrap">
+            <div className="ft-bottom-wrap">
                 <p className="copyright">Copyright ⓒ 2022 523kunstdoc All Rights Reserved.</p>
                 <p className="policy">Privacy Policy</p>
             </div>

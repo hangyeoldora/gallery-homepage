@@ -10,34 +10,51 @@ const Header = () => {
 
   return (
     <>
-      <div className="navbar">
-        <ul className="nav-wrap">
-          <li className="nav-click">
-            <FontAwesomeIcon
-              icon={faBars}
-              className="nav-icon"
+      <header>
+        <div className="navbar">
+          <ul className="nav-wrap">
+            <li className="nav-click">
+              <FontAwesomeIcon
+                icon={faBars}
+                className="nav-icon"
+                onClick={() => {
+                  navBtn === false ? setNavBtn(true) : setNavBtn(false);
+                }}
+              />
+            </li>
+            <li
+              className="nav-li"
               onClick={() => {
-                navBtn === false ? setNavBtn(true) : setNavBtn(false);
+                navigate("/about");
+              }}
+            >
+              about
+            </li>
+            <li
+              className="nav-li"
+              onClick={() => {
+                navigate("/exhibitions");
+              }}
+            >
+              exhibition
+            </li>
+          </ul>
+          <div className="logo">
+            <img
+              src={
+                process.env.PUBLIC_URL +
+                "/images/logo/523kunstdoc_mini_logo.png"
+              }
+              onClick={() => {
+                navigate("/");
               }}
             />
-          </li>
-          <li className="nav-li" onClick={()=>{navigate('/about')}}>about</li>
-          {/* <Link to="/about">about</Link> */}
-          <li className="nav-li">exhibition</li>
-        </ul>
-        <div className="logo">
-          <img
-            src={
-              process.env.PUBLIC_URL + "/images/logo/523kunstdoc_mini_logo.png"
-            }
-            onClick={()=>{ navigate('/')}}
-          />
+          </div>
+          <div className="contact">
+            <p>contact</p>
+          </div>
         </div>
-        <div className="contact">
-          <p>contact</p>
-        </div>
-      </div>
-      {navBtn === true ? (
+        {navBtn === true ? (
         <div className="navmenu">
           <ul>
             <li
@@ -57,6 +74,8 @@ const Header = () => {
           </div>
         </div>
       ) : null}
+      </header>
+      
     </>
   );
 };
